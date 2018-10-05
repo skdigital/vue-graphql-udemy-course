@@ -3,13 +3,25 @@ module.exports = {
     getUser: () => null
   },
   Mutation: {
+    addPost: async (
+      _,
+      { title, imageUrl, categories, description, creatorId },
+      { Post }
+    ) => {
+      const newPost = await new Post({
+        title,
+        imageUrl,
+        categories,
+        description,
+        createdBy: creatorId
+      }).save();
+      return newPost;
+    },
     signupUser: async (_, { username, email, password }, { User }) => {
-      // takes the username as a param and checks if the user exists
       const user = await User.findOne({ username });
       if (user) {
         throw new Error("User already exists");
       }
-      // saves user to database
       const newUser = await new User({
         username,
         email,

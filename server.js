@@ -11,16 +11,16 @@ require("dotenv").config({ path: "variables.env" });
 const User = require("./models/User");
 const Post = require("./models/Post");
 
-// connect to mongoose
+// connect to database
 mongoose
   .connect(
     process.env.MONGO_URI,
     { useNewUrlParser: true }
   )
-  .then(() => console.log("-- DB Connected --"))
-  .catch(err => console.log(err));
+  .then(() => console.log("DB connected"))
+  .catch(err => console.error(err));
 
-// set useCreateIndex - handling an error
+// handle depreciation error
 mongoose.set("useCreateIndex", true);
 
 const server = new ApolloServer({
@@ -32,6 +32,6 @@ const server = new ApolloServer({
   }
 });
 
-server.listen(4000).then(({ url }) => {
-  console.log(`Server Listening on ${url}`);
+server.listen().then(({ url }) => {
+  console.log(`Server listening on ${url}`);
 });
