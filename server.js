@@ -19,7 +19,7 @@ mongoose
     process.env.MONGO_URI,
     { useNewUrlParser: true }
   )
-  .then(() => console.log("DB connected"))
+  .then(() => console.log("-- DB connected --"))
   .catch(err => console.error(err));
 
 // handle depreciation error
@@ -36,6 +36,6 @@ const server = new ApolloServer({
 });
 
 // server listening on port 4000
-server.listen().then(({ url }) => {
+server.listen(4000).then(({ url }) => {
   console.log(`Server listening on ${url}`);
 });
