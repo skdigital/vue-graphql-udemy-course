@@ -31,6 +31,10 @@ export default new Vuex.Store({
                 title
                 imageUrl
                 description
+                body
+                createdBy {
+                  _id
+                }
                 likes
               }
             }

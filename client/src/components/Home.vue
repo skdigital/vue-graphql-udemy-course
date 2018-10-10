@@ -19,6 +19,18 @@
         </v-carousel>
       </v-flex>
 
+      <v-container grid-list-xs>
+
+        <ul v-for="post in posts" :key="post.id">
+          <li>{{ post.title }}</li>
+          <li>{{ post.description}}</li>
+          <li>{{ post.likes }}</li>
+          <li>{{ post.body }}</li>
+
+        </ul>
+
+      </v-container>
+
     </v-container>
   </div>
 </template>

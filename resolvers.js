@@ -13,7 +13,7 @@ module.exports = {
   Mutation: {
     addPost: async (
       _,
-      { title, imageUrl, categories, description, creatorId },
+      { title, imageUrl, categories, description, body, creatorId },
       { Post }
     ) => {
       const newPost = await new Post({
@@ -21,6 +21,7 @@ module.exports = {
         imageUrl,
         categories,
         description,
+        body,
         createdBy: creatorId
       }).save();
       return newPost;
