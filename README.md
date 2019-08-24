@@ -1,5 +1,7 @@
 # vue-graphql-udemy-course
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/skdigital/vue-graphql-udemy-course.svg)](https://greenkeeper.io/)
+
 Vue GraphQL, mLAB hosted mongoDB Udemy course from Reed Barger
 
 ### Course technologies
